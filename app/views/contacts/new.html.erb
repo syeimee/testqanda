@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag "application",media: "all", "data-turbolinks-track": "reload" %>
+<div class = "contacts_main_contents" >
+<h1>Contact</h1>
+<p>ご質問などは以下のフォームにてお問い合わせくださいませ。
+必須の項目は必ずご入力をお願いします。</p>
+
+
+<div class="contacts_alert">
+<%= flash[:alert] %>
+</div>
+
+
+<%= form_with model: @contact, url: confirm_contacts_path, local: true do |f| %>
+        <div class="form-group">
+          <div>
+            <%= f.label :name, 'お名前' %><span>必須</span>
+          </div>
+          <div>
+            <%= f.text_field :name, autofocus: true,class:"input-element" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+          <%= f.label :email, 'メールアドレス' %><span>必須</span>
+          </div>
+          <div>
+          <%= f.email_field :email,class:"input-element" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+       <%= f.label :subject, '件名' %><span>必須</span>
+          </div>
+          <div>
+             <%= f.text_area :subject,class:"input-element"%>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+          <%= f.label :message, 'メッセージ' %><span>必須</span>
+          </div>
+          <div>
+          <%= f.text_area :message, size: '10x10' ,class:"input-element"%>
+          </div>
+        </div>
+
+          <%= f.submit '入力内容確認',class:"submit-button"%>
+      <% end %>
+
+
+</div>
+
+
+
+
+

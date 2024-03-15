@@ -1,16 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Qanda</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| CODEWORKS | 岡山でエンジニアをしています。</title>
+    <%= stylesheet_link_tag "application",media: "all", "data-turbolinks-track": "reload" %>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,700,400' rel='stylesheet' type='text/css'>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+
+<body>
+    <div class="sidebar">
+        <ul class="sidebar_list">
+            <li class="sidebar_list_menu">
+                <a href="/contacts/new"><%= image_tag 'img/Contact.svg' %></a>
+            </li>
+            <li class="sidebar_list_menu">
+              　<a href="/tech"><%= image_tag 'img/Tech.svg' %></a>
+            </li>
+            <li class="sidebar_list_menu">
+              　<a href="/blog"><%= image_tag 'img/Blog.svg' %></a>
+            </li>
+            <li class="sidebar_list_menu">
+              　<a href="/about"><%= image_tag 'img/About.svg' %></a>
+            </li>
+            <li class="sidebar_list_sns">
+              　<a href=""><%= image_tag 'ico/X.png' %></a>
+            </li>
+            <li class="sidebar_list_sns">
+              　<a href=""><%= image_tag 'ico/instagram.png' %></a>
+            </li>
+            <li class="sidebar_list_sns">
+              　<a href="https://github.com/syeimee"><%= image_tag 'ico/github-mark.png' %></a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <header>
+            <div class="header_wrapper">
+                <h1 class="logo"><%= link_to "CODE WORKS", root_path %></h1>
+                <ul class="menu_items">
+                    <li class="menu_item"><%=link_to 'About',"/about"%></li>
+                    <li class="menu_item"><%=link_to 'Blog',"/blog"%></li>
+                    <li class="menu_item"><%=link_to 'Tech',"/tech"%></li>
+                    <li class="menu_item"><%=link_to 'Contact',"/contacts/new"%></li>
+                </ul>
+            </div>
+        </header>
+    <main>
+      <%= yield  %>
+    </main>
+    </div>
+    <footer>
+        <div class="footer">
+            <ul>
+                <li><%=link_to 'Top',root_path%></li>
+                <li><%=link_to 'About',"/about"%></li>
+                <li><%=link_to 'Blog',"/blog"%></li>
+                <li><%=link_to 'Tech',"/tech"%></li>
+                <li><%=link_to 'Contact',"/contacts/new"%></li>
+            </ul>
+            <div class="footerlogo">
+                <h1><%= link_to "CODE WORKS", root_path %></h1>
+            </div>
+            <div class="copyright">
+                <h2>©CODE WORKS All rights reserved.</h2>
+            </div>
+        </div>
+    </footer>
+</body>

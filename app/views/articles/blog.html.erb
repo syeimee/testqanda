@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag "application",media: "all", "data-turbolinks-track": "reload" %>
+<div class = "articles_main_contents" >
+<h1>Blog</h1>
+
+<% @posts.each do |post| %>
+
+    <p class="blog_title"><%= post.title %> </p>
+    <p class="blog_date"><%= post.date.strftime("%Y-%m-%d") %></p>
+    <article><%= post.body.html_safe %></article>
+
+<% end %>
+
+</div>
+
+
